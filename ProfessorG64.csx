@@ -182,12 +182,21 @@ ProfessorLog("Finished patching removed functions.");
 
 #region Import replacement scripts
 
+ProfessorLog("Importing new scripts...");
+
+ReplaceGMLFromFolder("New Scripts");
+
+ProfessorLog("New scripts imported.");
+
+#endregion
+
+
+
+#region Import replacement scripts
+
 ProfessorLog("Importing replacement scripts...");
 
-foreach (var file in Directory.GetFiles("Replacement Scripts"))
-{
-    ImportGMLFile(file);
-}
+ReplaceGMLFromFolder("Replacement Scripts");
 
 ProfessorLog("Replacement scripts imported.");
 
@@ -195,9 +204,9 @@ ProfessorLog("Replacement scripts imported.");
 
 
 
-#region Fix decompiler bugs
+#region Fix individual decompiler bugs
 
-ProfessorLog("Fixing decompiler bugs...");
+ProfessorLog("Fixing individual decompiler bugs...");
 
 
 
@@ -209,7 +218,7 @@ ProfessorLog("Decompiler bugs fixed.");
 
 #region Bugfixes
 
-ProfessorLog("Fixing game bugs...");
+ProfessorLog("Fixing individual game bugs...");
 
 
 
@@ -220,7 +229,6 @@ ProfessorLog("Game bugs fixed.");
 
 
 #region Performance improvements
-
 
 ProfessorLog("Applying performance improvements...");
 
@@ -264,8 +272,6 @@ void ProfessorLog(string message)
     ScriptMessage("[ProfessorG64]" + message);
 }
 
-// TODO: Add a folder for GML files to use for larger replacements instead of being inline
-
 void ReplaceGML(string name, string replacement)
 {
     var gml = Data.Code.ByName(name);
@@ -273,5 +279,11 @@ void ReplaceGML(string name, string replacement)
     gml.ReplaceGML(replacement, Data);
 }
 
+void ReplaceGMLFromFolder(string name) {
+    foreach (var file in Directory.GetFiles(name))
+    {
+        ImportGMLFile(file);
+    }
+}
 
 #endregion
