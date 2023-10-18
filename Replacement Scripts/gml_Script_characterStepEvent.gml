@@ -1,4 +1,6 @@
-var jump_vel, splash, st1;
+// Changes: decompiler fixing, put a hard cap on how long zips can iterate before exiting.
+
+var jump_vel, splash, st1, ziptimer, prevzipx;
 if global.enablecontrol
     chStepControl()
 if global.movingobj
@@ -305,16 +307,26 @@ if platformCharacterIs(IN_AIR)
     }
     if walljumping
     {
+        ziptimer = 8000
+        prevzipx = x
         if (facing == LEFT)
         {
-            while (isCollisionRight(1) == 0)
+            while (isCollisionRight(1) == 0 && ziptimer > 0)
+            {
                 x += 1
+                ziptimer -= 1
+            }
         }
         if (facing == RIGHT)
         {
-            while (isCollisionLeft(1) == 0)
+            while (isCollisionLeft(1) == 0 && ziptimer > 0)
+            {
                 x -= 1
+                ziptimer -= 1
+            }
         }
+        if (ziptimer == 0)
+            x = prevzipx;
     }
     if (kJump && kJumpPushedSteps == 0 && vjump == 1 && aimdirection != 6 && aimdirection != 7 && novjump == 0 && state != AIRBALL && aimlock == 0 && monster_drain == 0)
     {

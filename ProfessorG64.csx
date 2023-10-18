@@ -279,7 +279,6 @@ void ProfessorLog(string message)
 void ReplaceGML(string name, string replacement)
 {
     var gml = Data.Code.ByName(name);
-    // var gml = GetDecompiledText(data.Name.Content);
     gml.ReplaceGML(replacement, Data);
 }
 
