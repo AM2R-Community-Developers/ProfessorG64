@@ -220,7 +220,11 @@ ProfessorLog("Decompiler bugs fixed.");
 
 ProfessorLog("Fixing individual game bugs...");
 
-
+// Patches GUI surface displaying at incorrect scales.
+// TODO: Could this use application surface values for sizing instead?
+ReplaceTextInGML("gml_Object_oControl_Draw_64",
+                 "draw_surface_ext(gui_surface, (displayx - d[0]), (displayy - d[1]), display_scale, display_scale, 0, -1, 1)",
+                 "draw_surface_ext(gui_surface, (displayx - d[0]) / display_scale, (displayy - d[1]) / display_scale, 1, 1, 0, -1, 1)");
 
 ProfessorLog("Game bugs fixed.");
 
