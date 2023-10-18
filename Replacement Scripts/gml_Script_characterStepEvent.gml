@@ -359,6 +359,15 @@ if platformCharacterIs(IN_AIR)
     }
     if (yVel < 0 && state == AIRBALL)
     {
+	
+		//original code with booleans in equation
+		/*
+	    if (isCollisionUpRight() == 1 && kRight == 0) 
+			x -= 1 + (statetime < 2) + (statetime < 4)
+        if (isCollisionUpLeft() == 1 && kLeft == 0) 
+			x += 1 + (statetime < 2) + (statetime < 4)
+		*/
+		//patched code
         st1 = 1
         if (statetime < 4)
             st1 = 2
@@ -368,6 +377,7 @@ if platformCharacterIs(IN_AIR)
             x -= st1
         if (isCollisionUpLeft() == 1 && kLeft == 0)
             x += st1
+		//end patch
     }
     if (vjump == 0 && dash == 0 && state != AIRBALL)
     {

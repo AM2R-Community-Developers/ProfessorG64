@@ -35,7 +35,10 @@ if active
         sfx_play(sndMenuMove)
         global.tiptext = tip[global.curropt]
     }
+	//added ceiling here to prevent analog input from setting invalid values
+	//var input = oControl.kRight - oControl.kLeft
     input = (ceil(oControl.kRight) - ceil(oControl.kLeft))
+	//end analog input patch
     inputSteps = (oControl.kRightPushedSteps - oControl.kLeftPushedSteps)
     if (input != 0 && inputSteps == 0 && global.curropt < menuSize && oControl.kDown == 0 && oControl.kUp == 0)
     {
@@ -98,9 +101,14 @@ if active
             global.ophudshowhints = (!global.ophudshowhints)
         if (buttonsEnabled && global.curropt == opButtonType)
         {
+			//Boolean in equation: inputMax is reduced by 2 if OS is android.
+			//original code		
+			//var inputMax = 5 - ((os_type == os_android) * 2)
+			//patched code
             inputMax = 5
             if (os_type == os_android)
                 inputMax = 3
+			//end inputMax patch
             oControl.mod_buttonsconfig = wrap((oControl.mod_buttonsconfig + input), 0, inputMax)
             event_user(3)
             event_user(4)

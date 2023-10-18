@@ -1,4 +1,6 @@
 var imageindex;
+//variable corruption in the last pause[]
+//fixed by setting `floor(image_index)` to a variable
 imageindex = floor(image_index)
 if (state == 0 || (!global.ingame) || room == rm_transition)
 {

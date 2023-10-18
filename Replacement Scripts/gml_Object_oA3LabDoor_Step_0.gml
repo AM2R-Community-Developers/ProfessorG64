@@ -25,10 +25,16 @@ if (state == 2)
     if (active == 0)
     {
         state = 3
+		//original code with booleans in equation
+		/*
+		myblock = instance_create(x - (facing == -1) * 16, y, oSolid1x4)
+		*/
+		//patched code 
         myblockoffset = 0
         if (facing == -1)
             myblockoffset = 16
         myblock = instance_create((x - myblockoffset), y, oSolid1x4)
+		//end patch
         sfx_play(sndDoorClose)
     }
 }

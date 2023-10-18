@@ -1,4 +1,6 @@
 var mirrorAngle;
+//Boolean in equation, multiple cases
+//((image_xscale == -1) * 180) Replaced by new variable, `mirrorAngle`
 mirrorAngle = 0
 if (image_xscale == -1)
     mirrorAngle = 180

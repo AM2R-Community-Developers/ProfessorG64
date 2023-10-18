@@ -1,4 +1,8 @@
-//ADD THE TWO COMPILER PATCH SCRIPTS BEFORE THIS ENTRY 
+//Significant portions of this entry relocated to two separate scripts
+//chStepMovingCheck_Compiler_Patch_One
+//chStepMovingCheck_Compiler_Patch_Two
+// ^ IMPORT THESE TWO COMPILER PATCH SCRIPTS BEFORE THIS ENTRY 
+//Original code was completely trashed by the compiler due to `while` nested in `with`
 viscidMovementOk = 1
 with (oMovingSolid)
 {
@@ -43,6 +47,7 @@ with (oMovingSolid)
         calculateCollisionBounds()
     if isCollisionRectangle((((x - abs(xVelInteger)) - sprite_xoffset) - 2), (((y - abs(yVelInteger)) - sprite_yoffset) - 2), ((((x + sprite_width) + abs(xVelInteger)) - sprite_xoffset) + 2), ((((y + sprite_height) + abs(yVelInteger)) - sprite_yoffset) + 2), oCharacter.lb, oCharacter.tb, oCharacter.rb, oCharacter.bb)
     {
+	//first patch script placement
         chStepMovingCheck_Compiler_Patch_One()
         if (oCharacter.viscidMovementOk == 2)
             oCharacter.viscidMovementOk = 0
@@ -57,6 +62,7 @@ with (oMoveableSolid)
 {
     yMPrev = y
     yVel += oCharacter.grav
+	//second patch script placement
     chStepMovingCheck_Compiler_Patch_Two()
 }
 if (state == CLIMBING)

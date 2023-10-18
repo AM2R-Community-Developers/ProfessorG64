@@ -13,10 +13,14 @@ repeat (8)
     mytrail.image_alpha = 1
     mytrail.fadespeed = 0.02
     mytrail.additive = 0
+	//Original code with boolean in equation
+	//mytrail.image_xscale = 1 - (random(2) < 1) * 2
+	//Patched code
     mytrailxscale = 1
     if (random(2) < 1)
         mytrailxscale = -1
     mytrail.image_xscale = mytrailxscale
+	//end patch
     mytrail.vspeed = (-2 - random(5))
     mytrail.hspeed = (-2 + random(4))
     mytrail.gravity = 0.2
