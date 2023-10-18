@@ -1,178 +1,279 @@
-if (argument0 == 0)
-    return oControl.mod_bombs;
-else if (argument0 == 2)
-    return oControl.mod_spider;
-else if (argument0 == 3)
-    return oControl.mod_jumpball;
-else if (argument0 == 4)
-    return oControl.mod_hijump;
-else if (argument0 == 5)
-    return oControl.mod_varia;
-else if (argument0 == 6)
-    return oControl.mod_spacejump;
-else if (argument0 == 7)
-    return oControl.mod_speedbooster;
-else if (argument0 == 8)
-    return oControl.mod_screwattack;
-else if (argument0 == 9)
-    return oControl.mod_gravity;
-else if (argument0 == 10)
-    return oControl.mod_charge;
-else if (argument0 == 11)
-    return oControl.mod_ice;
-else if (argument0 == 12)
-    return oControl.mod_wave;
-else if (argument0 == 13)
-    return oControl.mod_spazer;
-else if (argument0 == 14)
-    return oControl.mod_plasma;
-else if (argument0 == 52)
-    return oControl.mod_52;
-else if (argument0 == 53)
-    return oControl.mod_53;
-else if (argument0 == 54)
-    return oControl.mod_54;
-else if (argument0 == 55)
-    return oControl.mod_55;
-else if (argument0 == 56)
-    return oControl.mod_56;
-else if (argument0 == 57)
-    return oControl.mod_57;
-else if (argument0 == 60)
-    return oControl.mod_60;
-else if (argument0 == 100)
-    return oControl.mod_100;
-else if (argument0 == 101)
-    return oControl.mod_101;
-else if (argument0 == 102)
-    return oControl.mod_102;
-else if (argument0 == 104)
-    return oControl.mod_104;
-else if (argument0 == 105)
-    return oControl.mod_105;
-else if (argument0 == 106)
-    return oControl.mod_106;
-else if (argument0 == 107)
-    return oControl.mod_107;
-else if (argument0 == 109)
-    return oControl.mod_109;
-else if (argument0 == 111)
-    return oControl.mod_111;
-else if (argument0 == 150)
-    return oControl.mod_150;
-else if (argument0 == 151)
-    return oControl.mod_151;
-else if (argument0 == 152)
-    return oControl.mod_152;
-else if (argument0 == 153)
-    return oControl.mod_153;
-else if (argument0 == 154)
-    return oControl.mod_154;
-else if (argument0 == 155)
-    return oControl.mod_155;
-else if (argument0 == 156)
-    return oControl.mod_156;
-else if (argument0 == 159)
-    return oControl.mod_159;
-else if (argument0 == 161)
-    return oControl.mod_161;
-else if (argument0 == 163)
-    return oControl.mod_163;
-else if (argument0 == 202)
-    return oControl.mod_202;
-else if (argument0 == 203)
-    return oControl.mod_203;
-else if (argument0 == 204)
-    return oControl.mod_204;
-else if (argument0 == 205)
-    return oControl.mod_205;
-else if (argument0 == 208)
-    return oControl.mod_208;
-else if (argument0 == 210)
-    return oControl.mod_210;
-else if (argument0 == 211)
-    return oControl.mod_211;
-else if (argument0 == 214)
-    return oControl.mod_214;
-else if (argument0 == 250)
-    return oControl.mod_250;
-else if (argument0 == 252)
-    return oControl.mod_252;
-else if (argument0 == 255)
-    return oControl.mod_255;
-else if (argument0 == 257)
-    return oControl.mod_257;
-else if (argument0 == 259)
-    return oControl.mod_259;
-else if (argument0 == 303)
-    return oControl.mod_303;
-else if (argument0 == 304)
-    return oControl.mod_304;
-else if (argument0 == 307)
-    return oControl.mod_307;
-else if (argument0 == 308)
-    return oControl.mod_308;
-else if (argument0 == 309)
-    return oControl.mod_309;
-else if (argument0 == 51)
-    return oControl.mod_51;
-else if (argument0 == 110)
-    return oControl.mod_110;
-else if (argument0 == 162)
-    return oControl.mod_162;
-else if (argument0 == 206)
-    return oControl.mod_206;
-else if (argument0 == 207)
-    return oControl.mod_207;
-else if (argument0 == 209)
-    return oControl.mod_209;
-else if (argument0 == 215)
-    return oControl.mod_215;
-else if (argument0 == 256)
-    return oControl.mod_256;
-else if (argument0 == 300)
-    return oControl.mod_300;
-else if (argument0 == 305)
-    return oControl.mod_305;
-else if (argument0 == 50)
-    return oControl.mod_50;
-else if (argument0 == 103)
-    return oControl.mod_103;
-else if (argument0 == 108)
-    return oControl.mod_108;
-else if (argument0 == 157)
-    return oControl.mod_157;
-else if (argument0 == 158)
-    return oControl.mod_158;
-else if (argument0 == 200)
-    return oControl.mod_200;
-else if (argument0 == 201)
-    return oControl.mod_201;
-else if (argument0 == 251)
-    return oControl.mod_251;
-else if (argument0 == 254)
-    return oControl.mod_254;
-else if (argument0 == 306)
-    return oControl.mod_306;
-else if (argument0 == 58)
-    return oControl.mod_58;
-else if (argument0 == 59)
-    return oControl.mod_59;
-else if (argument0 == 112)
-    return oControl.mod_112;
-else if (argument0 == 160)
-    return oControl.mod_160;
-else if (argument0 == 212)
-    return oControl.mod_212;
-else if (argument0 == 213)
-    return oControl.mod_213;
-else if (argument0 == 253)
-    return oControl.mod_253;
-else if (argument0 == 258)
-    return oControl.mod_258;
-else if (argument0 == 301)
-    return oControl.mod_301;
-else if (argument0 == 302)
-    return oControl.mod_302;
-else
-    return argument0;
+//`return variable` corruption inside of switch
+//Previously replaced switch with `else if` statements; method presented here preserves the swtich statement and requires less replacement.
+//ALL instances of `return` within the switch replaced with new local variable, `itemvalue`
+var itemvalue 
+switch (argument0)
+{
+    case 0:
+        itemvalue = oControl.mod_bombs;
+        break;
+    case 2:
+        itemvalue = oControl.mod_spider;
+        break;
+    case 3:
+        itemvalue = oControl.mod_jumpball;
+        break;
+    case 4:
+        itemvalue = oControl.mod_hijump;
+        break;
+    case 5:
+        itemvalue = oControl.mod_varia;
+        break;
+    case 6:
+        itemvalue = oControl.mod_spacejump;
+        break;
+    case 7:
+        itemvalue = oControl.mod_speedbooster;
+        break;
+    case 8:
+        itemvalue = oControl.mod_screwattack;
+        break;
+    case 9:
+        itemvalue = oControl.mod_gravity;
+        break;
+    case 10:
+        itemvalue = oControl.mod_charge;
+        break;
+    case 11:
+        itemvalue = oControl.mod_ice;
+        break;
+    case 12:
+        itemvalue = oControl.mod_wave;
+        break;
+    case 13:
+        itemvalue = oControl.mod_spazer;
+        break;
+    case 14:
+        itemvalue = oControl.mod_plasma;
+        break;
+        //Missiles
+    case 52:
+        itemvalue = oControl.mod_52;
+        break;
+    case 53:
+        itemvalue = oControl.mod_53;
+        break;
+    case 54:
+        itemvalue = oControl.mod_54;
+        break;
+    case 55:
+        itemvalue = oControl.mod_55;
+        break;
+    case 56:
+        itemvalue = oControl.mod_56;
+        break;
+    case 57:
+        itemvalue = oControl.mod_57;
+        break;
+    case 60:
+        itemvalue = oControl.mod_60;
+        break;
+    case 100:
+        itemvalue = oControl.mod_100;
+        break;
+    case 101:
+        itemvalue = oControl.mod_101;
+        break;
+    case 102:
+        itemvalue = oControl.mod_102;
+        break;
+    case 104:
+        itemvalue = oControl.mod_104;
+        break;
+    case 105:
+        itemvalue = oControl.mod_105;
+        break;
+    case 106:
+        itemvalue = oControl.mod_106;
+        break;
+    case 107:
+        itemvalue = oControl.mod_107;
+        break;
+    case 109:
+        itemvalue = oControl.mod_109;
+        break;
+    case 111:
+        itemvalue = oControl.mod_111;
+        break;
+    case 150:
+        itemvalue = oControl.mod_150;
+        break;
+    case 151:
+        itemvalue = oControl.mod_151;
+        break;
+    case 152:
+        itemvalue = oControl.mod_152;
+        break;
+    case 153:
+        itemvalue = oControl.mod_153;
+        break;
+    case 154:
+        itemvalue = oControl.mod_154;
+        break;
+    case 155:
+        itemvalue = oControl.mod_155;
+        break;
+    case 156:
+        itemvalue = oControl.mod_156;
+        break;
+    case 159:
+        itemvalue = oControl.mod_159;
+        break;
+    case 161:
+        itemvalue = oControl.mod_161;
+        break;
+    case 163:
+        itemvalue = oControl.mod_163;
+        break;
+    case 202:
+        itemvalue = oControl.mod_202;
+        break;
+    case 203:
+        itemvalue = oControl.mod_203;
+        break;
+    case 204:
+        itemvalue = oControl.mod_204;
+        break;
+    case 205:
+        itemvalue = oControl.mod_205;
+        break;
+    case 208:
+        itemvalue = oControl.mod_208;
+        break;
+    case 210:
+        itemvalue = oControl.mod_210;
+        break;
+    case 211:
+        itemvalue = oControl.mod_211;
+        break;
+    case 214:
+        itemvalue = oControl.mod_214;
+        break;
+    case 250:
+        itemvalue = oControl.mod_250;
+        break;
+    case 252:
+        itemvalue = oControl.mod_252;
+        break;
+    case 255:
+        itemvalue = oControl.mod_255;
+        break;
+    case 257:
+        itemvalue = oControl.mod_257;
+        break;
+    case 259:
+        itemvalue = oControl.mod_259;
+        break;
+    case 303:
+        itemvalue = oControl.mod_303;
+        break;
+    case 304:
+        itemvalue = oControl.mod_304;
+        break;
+    case 307:
+        itemvalue = oControl.mod_307;
+        break;
+    case 308:
+        itemvalue = oControl.mod_308;
+        break;
+    case 309:
+        itemvalue = oControl.mod_309;
+        break;
+    //Super Missiles
+    case 51:
+        itemvalue = oControl.mod_51;
+        break;
+    case 110:
+        itemvalue = oControl.mod_110;
+        break;
+    case 162:
+        itemvalue = oControl.mod_162;
+        break;
+    case 206:
+        itemvalue = oControl.mod_206;
+        break;
+    case 207:
+        itemvalue = oControl.mod_207;
+        break;
+    case 209:
+        itemvalue = oControl.mod_209;
+        break;
+    case 215:
+        itemvalue = oControl.mod_215;
+        break;
+    case 256:
+        itemvalue = oControl.mod_256;
+        break;
+    case 300:
+        itemvalue = oControl.mod_300;
+        break;
+    case 305:
+        itemvalue = oControl.mod_305;
+        break;
+    //Energy Tanks
+    case 50:
+        itemvalue = oControl.mod_50;
+        break;
+    case 103:
+        itemvalue = oControl.mod_103;
+        break;
+    case 108:
+        itemvalue = oControl.mod_108;
+        break;
+    case 157:
+        itemvalue = oControl.mod_157;
+        break;
+    case 158:
+        itemvalue = oControl.mod_158;
+        break;
+    case 200:
+        itemvalue = oControl.mod_200;
+        break;
+    case 201:
+        itemvalue = oControl.mod_201;
+        break;
+    case 251:
+        itemvalue = oControl.mod_251;
+        break;
+    case 254:
+        itemvalue = oControl.mod_254;
+        break;
+    case 306:
+        itemvalue = oControl.mod_306;
+        break;
+    //Powerbombs
+    case 58:
+        itemvalue = oControl.mod_58;
+        break;
+    case 59:
+        itemvalue = oControl.mod_59;
+        break;
+    case 112:
+        itemvalue = oControl.mod_112;
+        break;
+    case 160:
+        itemvalue = oControl.mod_160;
+        break;
+    case 212:
+        itemvalue = oControl.mod_212;
+        break;
+    case 213:
+        itemvalue = oControl.mod_213;
+        break;
+    case 253:
+        itemvalue = oControl.mod_253;
+        break;
+    case 258:
+        itemvalue = oControl.mod_258;
+        break;
+    case 301:
+        itemvalue = oControl.mod_301;
+        break;
+    case 302:
+        itemvalue = oControl.mod_302;
+        break;
+	default:
+		itemvalue = argument0
+}
+//Only this return is kept
+return itemvalue;
