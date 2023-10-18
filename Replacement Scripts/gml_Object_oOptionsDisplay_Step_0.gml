@@ -35,7 +35,7 @@ if active
         sfx_play(sndMenuMove)
         global.tiptext = tip[global.curropt]
     }
-    input = (round(oControl.kRight) - round(oControl.kLeft))
+    input = (ceil(oControl.kRight) - ceil(oControl.kLeft))
     inputSteps = (oControl.kRightPushedSteps - oControl.kLeftPushedSteps)
     if (input != 0 && inputSteps == 0 && global.curropt < menuSize && oControl.kDown == 0 && oControl.kUp == 0)
     {
