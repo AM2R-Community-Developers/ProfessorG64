@@ -1,9 +1,7 @@
+using System;
+using System.IO;
 
-
-void ProfessorLog(string message) 
-{
-    ScriptMessage("[ProfessorG64]" + message);
-}
+// TODO: Ensure we're actually using 1.5.5
 
 #region 15_to_17_To_16
 
@@ -165,11 +163,95 @@ ProfessorLog("Finished updating bytecode.");
 
 #endregion
 
-#region Patch out deprecated functions with empty stubs
+
+
+#region Patch out removed functions
 
 ProfessorLog("Patching out removed functions...");
 
-void AddMissing(string name) 
+// TODO: We need a real replacement for this system, it's vital for custom localizations!
+AddMissing("font_replace");
+AddMissing("immersion_stop");
+AddMissing("immersion_play_effect");
+
+ProfessorLog("Finished patching removed functions.");
+
+#endregion
+
+
+
+#region Import replacement scripts
+
+ProfessorLog("Importing replacement scripts...");
+
+foreach (var file in Directory.GetFiles("Replacement Scripts"))
+{
+    ImportGMLFile(file);
+}
+
+ProfessorLog("Replacement scripts imported.");
+
+#endregion
+
+
+
+#region Fix decompiler bugs
+
+ProfessorLog("Fixing decompiler bugs...");
+
+
+
+ProfessorLog("Decompiler bugs fixed.");
+
+#endregion
+
+
+
+#region Bugfixes
+
+ProfessorLog("Fixing game bugs...");
+
+
+
+ProfessorLog("Game bugs fixed.");
+
+#endregion
+
+
+
+#region Performance improvements
+
+
+ProfessorLog("Applying performance improvements...");
+
+
+
+ProfessorLog("Performance improvements applied.");
+
+#endregion
+
+
+
+#region Misc. modifications
+
+ProfessorLog("Applying misc. modifications...");
+
+ReplaceTextInGML("gml_Object_oControl_Create_0", "V1.5.5", "V1.6.0 B1");
+
+// TODO: Credits
+
+ProfessorLog("Misc. modifications applied.");
+
+#endregion
+
+
+
+
+
+
+#region Methods
+
+void AddMissing(string name)
 {
     UndertaleScript scr = new UndertaleScript();
     scr.Name = Data.Strings.MakeString(name);
@@ -177,10 +259,19 @@ void AddMissing(string name)
     Data.Scripts.Add(scr);
 }
 
-AddMissing("font_replace");
-AddMissing("immersion_stop");
-AddMissing("immersion_play_effect");
+void ProfessorLog(string message)
+{
+    ScriptMessage("[ProfessorG64]" + message);
+}
 
-ProfessorLog("Finished patching removed functions.")
+// TODO: Add a folder for GML files to use for larger replacements instead of being inline
+
+void ReplaceGML(string name, string replacement)
+{
+    var gml = Data.Code.ByName(name);
+    // var gml = GetDecompiledText(data.Name.Content);
+    gml.ReplaceGML(replacement, Data);
+}
+
 
 #endregion
