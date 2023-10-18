@@ -226,6 +226,11 @@ ReplaceTextInGML("gml_Object_oControl_Draw_64",
                  "draw_surface_ext(gui_surface, (displayx - d[0]), (displayy - d[1]), display_scale, display_scale, 0, -1, 1)",
                  "draw_surface_ext(gui_surface, (displayx - d[0]) / display_scale, (displayy - d[1]) / display_scale, 1, 1, 0, -1, 1)");
 
+// Patches IGT surface displaying at incorrect scales. Same as above.
+ReplaceTextInGML("gml_Object_oIGT_Draw_64",
+                 "draw_surface_ext(igt_surface, (oControl.displayx - d[0]), (oControl.displayy - d[1]), oControl.display_scale, oControl.display_scale, 0, -1, 1)",
+                 "draw_surface_ext(igt_surface, (oControl.displayx - d[0]) / oControl.display_scale, (oControl.displayy - d[1]) / oControl.display_scale, 1, 1, 0, -1, 1)");
+
 ProfessorLog("Game bugs fixed.");
 
 #endregion
