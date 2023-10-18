@@ -255,7 +255,20 @@ ProfessorLog("Applying misc. modifications...");
 
 ReplaceTextInGML("gml_Object_oControl_Create_0", "V1.5.5", "V1.6.0 B1");
 
-// TODO: Credits
+// TODO: Ensure credits cover everybody!
+
+/*
+    FORMATTING KEY:
+    ; = linebreak marker
+    = = split into left/right strings
+    / = centered name
+    * = centered header (gets custom display color)
+*/
+ReplaceTextInGML("gml_Object_oCreditsText_Create_0",
+
+                 "*Continued Revisions;;*Development;Gatordile=Lojemiru;/Alex 'Wanderer' Mack;;*Programming;\") + global.monsterStr) + \"3D=Scooterboot;/Craig Kostelecky;/milesthenerd;;*Art Lead;/Dannon 'Shmegleskimo' Yates;;*Art;ShirtyScarab=Cooper Garvin;/Chris 'Messianic' Oliveira;/ChloePlz;;*Debug;Miepee=EODTex;/Esteban 'DruidVorse' Criado;/Verneri 'Naatiska' Viljanen;/Electrix;;*Localization;Imsu=Diegomg;m3Zz=LPCaiser;Miepee=unknown;fedprod=ReNext;LetsPlayNintendoITA=SadNES cITy e Vecna;Atver=Gponys;DarkEspeon=Vectrex28;R3VOWOOD=Ritinha;LiveLM=pMega0n;peachflavored=Katherine_S2003;PanHooHa=realgard;Mister Bond=joe_urahara;RippeR1692=LudvigNG;/Andréas;;*Special Thanks;Banjo=King Bore;Reaku the Crate=Grom PE;Sylandro=TheKhaosDemon;Iwantdevil=PixHammer;GaptGlitch=Nokbient;Nanassshy=kitronmacaron;/Jean-Samuel Pelletier;/Japanese Community",
+
+                 "*Continued Revisions;;*Development;Gatordile=Lojemiru;/Alex 'Wanderer' Mack;;*Programming;\") + global.monsterStr) + \"3D=Scooterboot;/Craig Kostelecky;/milesthenerd;;*Art Lead;/Dannon 'Shmegleskimo' Yates;;*Art;ShirtyScarab=Cooper Garvin;/Chris 'Messianic' Oliveira;/ChloePlz;;*Debug;Miepee=EODTex;/Esteban 'DruidVorse' Criado;/Verneri 'Naatiska' Viljanen;/Electrix;;*Localization;Imsu=Diegomg;m3Zz=LPCaiser;Miepee=unknown;fedprod=ReNext;LetsPlayNintendoITA=SadNES cITy e Vecna;Atver=Gponys;DarkEspeon=Vectrex28;R3VOWOOD=Ritinha;LiveLM=pMega0n;peachflavored=Katherine_S2003;PanHooHa=realgard;Mister Bond=joe_urahara;RippeR1692=LudvigNG;/Andréas;;*Special Thanks;Banjo=King Bore;Reaku the Crate=Grom PE;Sylandro=TheKhaosDemon;Iwantdevil=PixHammer;GaptGlitch=Nokbient;Nanassshy=kitronmacaron;/Jean-Samuel Pelletier;/Japanese Community;/UndertaleModTool Team;/Johnny on Flame;Abyss=Haihaa;/Xander McCord");
 
 ProfessorLog("Misc. modifications applied.");
 
