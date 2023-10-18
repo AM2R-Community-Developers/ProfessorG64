@@ -1,6 +1,7 @@
 //`return variable` corruption inside of switch
 //Previously replaced switch with `else if` statements; method presented here preserves the swtich statement and requires less replacement.
 //ALL instances of `return` within the switch replaced with new local variable, `itemvalue`
+//default condition also added to switch
 var itemvalue 
 switch (argument0)
 {
