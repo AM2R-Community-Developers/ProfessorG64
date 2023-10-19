@@ -273,8 +273,8 @@ switch (argument0)
     case 302:
         itemvalue = oControl.mod_302;
         break;
-	default:
-		itemvalue = argument0
+    default:
+        itemvalue = argument0
 }
 //Only this return is kept
 return itemvalue;
