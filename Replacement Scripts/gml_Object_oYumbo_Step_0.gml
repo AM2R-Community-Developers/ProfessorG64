@@ -1,4 +1,3 @@
-var mirrorAngle;
 action_inherited()
 enemy_active_check(20)
 enemy_target_check(180, 0)
@@ -29,14 +28,13 @@ if (frozen == 0)
         if (state == 3)
         {
             xVel *= 0.9
-			//Original code with Boolean in equation
-			//image_angle = point_direction(x, y, oCharacter.x, oCharacter.y - 16) + 180 * (facing == -1)
-			//Patched code, `180 * (facing == -1)` replaced by new local variable, mirrorAngle
-            mirrorAngle = 0
+	    //Original code with Boolean in equation
+	    //image_angle = point_direction(x, y, oCharacter.x, oCharacter.y - 16) + 180 * (facing == -1)
+	    //Patched code, `180 * (facing == -1)` replaced by adding after initial determination
+            image_angle = point_direction(x, y, oCharacter.x, (oCharacter.y - 16))
             if (facing == -1)
-                mirrorAngle = 180
-            image_angle = (point_direction(x, y, oCharacter.x, (oCharacter.y - 16)) + mirrorAngle)
-			//end patch
+                image_angle += 180
+	    //end patch
             if (y > (oCharacter.y - 26))
                 yVel = -2
             if (y < (oCharacter.y - 26))
