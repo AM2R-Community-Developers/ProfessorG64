@@ -1,4 +1,4 @@
-// Changes: decompiler fixing, put a hard cap on how long zips can iterate before exiting.
+// Changes: decompiler fixing, put a hard cap on how long zips can iterate before exiting, fix spinjump water bug.
 
 var jump_vel, splash, st1, ziptimer, prevzipx;
 if global.enablecontrol
@@ -3043,10 +3043,11 @@ if (state == JUMPING && vjump == 0 && dash > 0)
     if (xVel > 8)
         xVel = 8
 }
+
 if (y > global.waterlevel && global.waterlevel != 0)
 {
     if (inwater == 0)
-    {
+    {.
         if (abs(yVel) > 1)
         {
             splash = instance_create(x, global.waterlevel, oSplash)
@@ -3065,6 +3066,9 @@ if (y > global.waterlevel && global.waterlevel != 0)
                 yVel *= 0.5
         }
         sfx_stop(spinjump_sound)
+        // Begin patch - force inwater to be true in order to appropriately update the spinjump_sound
+        inwater = 1
+        // End patch
         SetSpinJumpSound()
     }
     inwater = 1
@@ -3079,10 +3083,14 @@ else
             sfx_play(sndWaterExit)
         }
         sfx_stop(spinjump_sound)
+        // Begin patch - force inwater to be false in order to appropriately update the spinjump_sound
+        inwater = 0
+        // End patch
         SetSpinJumpSound()
     }
     inwater = 0
 }
+// End patch
 if (inwater && random(15) < 1 && fxtimer == 0)
 {
     if (state == BALL || state == AIRBALL || state == SPIDERBALL || state == DUCKING)
