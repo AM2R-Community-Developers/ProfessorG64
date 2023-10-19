@@ -1,11 +1,10 @@
-var jawdir, jawreverse;
+var jawdir;
 //Original code with boolean in equation
 //var jawdir = direction + 270 + (image_yscale == -1) * 180
 //patched code
-jawreverse = 0
+jawdir = (direction + 270)
 if (sign(image_yscale) == -1)
-    jawreverse = -180
-jawdir = ((direction + 270) + jawreverse)
+    jawdir -= 180
 //end patch
 draw_sprite_ext(sErisJaw, -1, (x + lengthdir_x((jawoff + 2), jawdir)), (y + lengthdir_y((jawoff + 2), jawdir)), 1, image_yscale, image_angle, -1, 1)
 draw_sprite_ext(sErisHead, -1, x, y, 1, image_yscale, image_angle, -1, 1)
