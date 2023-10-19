@@ -3047,7 +3047,7 @@ if (state == JUMPING && vjump == 0 && dash > 0)
 if (y > global.waterlevel && global.waterlevel != 0)
 {
     if (inwater == 0)
-    {.
+    {
         if (abs(yVel) > 1)
         {
             splash = instance_create(x, global.waterlevel, oSplash)
