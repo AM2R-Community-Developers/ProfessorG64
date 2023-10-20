@@ -398,4 +398,6 @@ FodyWeavers.xsd
 *.sln.iml
 
 *.unx
+*.win
 Export_Code
+CLI-windows-latest-Debug-isBundled-true
