@@ -249,6 +249,10 @@ ReplaceTextInGML("gml_Script_draw_character_to_surface",
 ReplaceTextInGML("gml_Script_characterCreateEvent",
                  "surf = surface_create(64, 64)",
 				 "global.characterSurf = surface_create(64, 64)");
+				 
+ReplaceTextInGML("gml_Object_oCharacter_Destroy_0",
+                 "surface_free(surf)",
+				 "surface_free(global.characterSurf)");
 
 ProfessorLog("Game bugs fixed.");
 
