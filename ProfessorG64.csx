@@ -231,6 +231,23 @@ ReplaceTextInGML("gml_Object_oIGT_Draw_64",
                  "draw_surface_ext(igt_surface, (oControl.displayx - d[0]), (oControl.displayy - d[1]), oControl.display_scale, oControl.display_scale, 0, -1, 1)",
                  "draw_surface_ext(igt_surface, (oControl.displayx - d[0]) / oControl.display_scale, (oControl.displayy - d[1]) / oControl.display_scale, 1, 1, 0, -1, 1)");
 
+// Globally replace oCharacter.surf with global.characterSurf.
+ReplaceTextInGML("gml_Object_oCharacterTrail_Create_0",
+                 "oCharacter.surf", 
+				 "global.characterSurf");
+
+ReplaceTextInGML("gml_Script_draw_character_from_surface",
+                 "oCharacter.surf", 
+				 "global.characterSurf");
+
+ReplaceTextInGML("gml_Script_draw_character_to_surface",
+                 "oCharacter.surf", 
+				 "global.characterSurf");
+
+ReplaceTextInGML("gml_Script_characterCreateEvent",
+                 "surf = surface_create(64, 64)",
+				 "global.characterSurf = surface_create(64, 64)");
+
 ProfessorLog("Game bugs fixed.");
 
 #endregion
@@ -300,10 +317,20 @@ void ReplaceGML(string name, string replacement)
     gml.ReplaceGML(replacement, Data);
 }
 
-void ReplaceGMLFromFolder(string name) {
+void ReplaceGMLFromFolder(string name)
+{
     foreach (var file in Directory.GetFiles(name))
     {
         ImportGMLFile(file);
+    }
+}
+
+// This is EXTREMELY slow. Only use if absolutely necessary!
+void GlobalReplace(string text, string replacement)
+{
+    foreach (var code in Data.Code)
+    {    
+        ReplaceTextInGML(code.Name.Content, text, replacement, true, false);
     }
 }
 
