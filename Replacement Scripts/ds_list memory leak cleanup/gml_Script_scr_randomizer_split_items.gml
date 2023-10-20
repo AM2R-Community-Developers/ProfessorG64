@@ -93,3 +93,5 @@ oControl.mod_206 = 206
 oControl.mod_253 = 253
 ds_list_empty(oControl.list_locations)
 random_set_seed(temp_seed)
+ds_list_destroy(oControl.list_powerbombs)
+ds_list_destroy(oControl.list_locations)

@@ -186,4 +186,5 @@ ds_list_delete(list_locations, (ds_list_size(list_locations) - 1))
 oControl.mod_206 = 206
 oControl.mod_253 = 253
 ds_list_empty(list_locations)
+ds_list_destroy(list_locations)
 random_set_seed(temp_seed)
