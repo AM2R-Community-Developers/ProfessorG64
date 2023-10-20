@@ -180,7 +180,7 @@ ProfessorLog("Finished patching removed functions.");
 
 
 
-#region Import replacement scripts
+#region Import new scripts
 
 ProfessorLog("Importing new scripts...");
 
@@ -197,6 +197,8 @@ ProfessorLog("New scripts imported.");
 ProfessorLog("Importing replacement scripts...");
 
 ReplaceGMLFromFolder("Replacement Scripts");
+
+ReplaceGMLFromFolder("Replacement Scripts/ds_list memory leak cleanup");
 
 ProfessorLog("Replacement scripts imported.");
 
