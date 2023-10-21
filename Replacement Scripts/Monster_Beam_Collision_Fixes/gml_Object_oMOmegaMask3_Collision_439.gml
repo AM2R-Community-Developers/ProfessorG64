@@ -1,4 +1,6 @@
-if (oBeam.chargebeam && (!oBeam.ibeam) && (!oBeam.wbeam) && (!oBeam.pbeam) && (!oBeam.sbeam) && global.missiles == 0 && global.smissiles == 0)
+//Prevents uncharged shots from damaging Monsters
+//swapped `oBeam` with `other`in the first line
+if (other.chargebeam && (!other.ibeam) && (!other.wbeam) && (!other.pbeam) && (!other.sbeam) && global.missiles == 0 && global.smissiles == 0)
 {
     if (oMOmega.myhealth > 0 && oMOmegaMask.image_index != 0)
     {
