@@ -224,6 +224,7 @@ ProfessorLog("Fixing individual game bugs...");
 
 // Patches GUI surface displaying at incorrect scales.
 // TODO: Could this use application surface values for sizing instead?
+// TODO: This is busted with fullscreen still. Just draw it over the application_surface next, ugh
 ReplaceTextInGML("gml_Object_oControl_Draw_64",
                  "draw_surface_ext(gui_surface, (displayx - d[0]), (displayy - d[1]), display_scale, display_scale, 0, -1, 1)",
                  "draw_surface_ext(gui_surface, (displayx - d[0]) / display_scale, (displayy - d[1]) / display_scale, 1, 1, 0, -1, 1)");
@@ -233,7 +234,10 @@ ReplaceTextInGML("gml_Object_oIGT_Draw_64",
                  "draw_surface_ext(igt_surface, (oControl.displayx - d[0]), (oControl.displayy - d[1]), oControl.display_scale, oControl.display_scale, 0, -1, 1)",
                  "draw_surface_ext(igt_surface, (oControl.displayx - d[0]) / oControl.display_scale, (oControl.displayy - d[1]) / oControl.display_scale, 1, 1, 0, -1, 1)");
 
+ProfessorLog("Patched HUD scale bug.");
+
 // Globally replace oCharacter.surf with global.characterSurf.
+// TODO: This does NOT fix the nvidia speedbooster trail issue!
 ReplaceTextInGML("gml_Object_oCharacterTrail_Create_0",
                  "oCharacter.surf", 
 				 "global.characterSurf");
@@ -253,6 +257,17 @@ ReplaceTextInGML("gml_Script_characterCreateEvent",
 ReplaceTextInGML("gml_Object_oCharacter_Destroy_0",
                  "surface_free(surf)",
 				 "surface_free(global.characterSurf)");
+
+ProfessorLog("Patched oCharacter.surf references with a global variable.");
+
+// Fix floor slope mask sizes.
+// TODO: Check ceiling slopes?
+SetSpriteMargins("sSlope1", 0, 16, 16, 0);
+SetSpriteMargins("sSlope2", 0, 16, 16, 0);
+SetSpriteMargins("sSlopeFL1", 0, 16, 32, 0);
+SetSpriteMargins("sSlopeFL2", 0, 16, 32, 0);
+
+ProfessorLog("Patched slope mask sizes.");
 
 ProfessorLog("Game bugs fixed.");
 
@@ -338,6 +353,15 @@ void GlobalReplace(string text, string replacement)
     {    
         ReplaceTextInGML(code.Name.Content, text, replacement, true, false);
     }
+}
+
+void SetSpriteMargins(string name, int left, int right, int bottom, int top)
+{
+    var sprite = Data.Sprites.ByName(name);
+    sprite.MarginLeft = left;
+    sprite.MarginRight = right;
+    sprite.MarginBottom = bottom;
+    sprite.MarginTop = top;
 }
 
 #endregion
