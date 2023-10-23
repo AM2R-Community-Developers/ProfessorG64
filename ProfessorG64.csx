@@ -169,7 +169,6 @@ ProfessorLog("Finished updating bytecode.");
 
 ProfessorLog("Patching out removed functions...");
 
-// TODO: We need a real replacement for this system, it's vital for custom localizations!
 AddMissing("font_replace");
 AddMissing("immersion_stop");
 AddMissing("immersion_play_effect");
