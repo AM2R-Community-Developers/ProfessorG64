@@ -128,12 +128,13 @@ with (oItem)
     draw_sprite_ext(sLight0, -1, ((x + 8) - view_xview[widescreen]), ((y - 8) - view_yview[widescreen]), 0.5, -0.5, 0, image_blend, 1)
     draw_sprite_ext(sLight0, -1, ((x + 8) - view_xview[widescreen]), ((y - 8) - view_yview[widescreen]), -0.5, -0.5, 0, image_blend, 1)
 }
+//adjusted oDoor light source to better match the A4 door sprites
 with (oDoor)
 {
-    draw_sprite_ext(sLight0, -1, (x - view_xview[widescreen]), ((y + 32) - view_yview[widescreen]), 1, 0.4, 0, c_white, 1)
-    draw_sprite_ext(sLight0, -1, (x - view_xview[widescreen]), ((y + 32) - view_yview[widescreen]), -1, 0.4, 0, c_white, 1)
-    draw_sprite_ext(sLight0, -1, (x - view_xview[widescreen]), ((y + 32) - view_yview[widescreen]), 1, -0.4, 0, c_white, 1)
-    draw_sprite_ext(sLight0, -1, (x - view_xview[widescreen]), ((y + 32) - view_yview[widescreen]), -1, -0.4, 0, c_white, 1)
+    draw_sprite_ext(sLight0, -1, (x - view_xview[widescreen]), ((y + 32) - view_yview[widescreen]), 0.55, 0.85, 0, c_white, 1)
+    draw_sprite_ext(sLight0, -1, (x - view_xview[widescreen]), ((y + 32) - view_yview[widescreen]), -0.55, 0.85, 0, c_white, 1)
+    draw_sprite_ext(sLight0, -1, (x - view_xview[widescreen]), ((y + 32) - view_yview[widescreen]), 0.55, -0.85, 0, c_white, 1)
+    draw_sprite_ext(sLight0, -1, (x - view_xview[widescreen]), ((y + 32) - view_yview[widescreen]), -0.55, -0.85, 0, c_white, 1)
 }
 with (oMOmegaFlame)
 {
