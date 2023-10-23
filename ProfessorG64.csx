@@ -200,6 +200,8 @@ ReplaceGMLFromFolder("Replacement Scripts");
 
 ReplaceGMLFromFolder("Replacement Scripts/ds_list memory leak cleanup");
 
+ReplaceGMLFromFolder("Replacement Scripts/Monster_Beam_Collision_Fixes");
+
 ProfessorLog("Replacement scripts imported.");
 
 #endregion
@@ -269,6 +271,33 @@ SetSpriteMargins("sSlopeFL2", 0, 16, 32, 0);
 
 ProfessorLog("Patched slope mask sizes.");
 
+// Fix font loading.
+ReplaceTextInGML("gml_Object_oControl_Create_0",
+                 "font_replace(global.fontGUI, ",
+                 "global.fontGUI = font_add(");
+
+ReplaceTextInGML("gml_Object_oControl_Create_0",
+                 "font_replace(global.fontSubScr, ",
+                 "global.fontSubScr = font_add(");
+
+ReplaceTextInGML("gml_Object_oControl_Create_0",
+                 "font_replace(global.fontGUI2, ",
+                 "global.fontGUI2 = font_add(");
+
+ReplaceTextInGML("gml_Object_oControl_Create_0",
+                 "font_replace(global.fontMenuSmall, ",
+                 "global.fontMenuSmall = font_add(");
+
+ReplaceTextInGML("gml_Object_oControl_Create_0",
+                 "font_replace(global.fontMenuTiny, ",
+                 "global.fontMenuTiny = font_add(");
+
+ReplaceTextInGML("gml_Object_oControl_Create_0",
+                 "font_replace(global.fontMenuSmall2, ",
+                 "global.fontMenuSmall2 = font_add(");
+
+ProfessorLog("Patched external font loading.");
+
 ProfessorLog("Game bugs fixed.");
 
 #endregion
@@ -329,7 +358,7 @@ void AddMissing(string name)
 
 void ProfessorLog(string message)
 {
-    ScriptMessage("[ProfessorG64]" + message);
+    ScriptMessage("[ProfessorG64] " + message);
 }
 
 void ReplaceGML(string name, string replacement)
