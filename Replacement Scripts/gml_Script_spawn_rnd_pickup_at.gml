@@ -52,8 +52,9 @@ if (random(100) <= argument2)
             else
                 instance_create(argument0, argument1, oSMPickup)
         }
-        else if ((global.item[0] == 0 && global.maxpbombs > 0) || oControl.mod_insanitymode == 1)
-            pickup = 4
+		// exit script if no previous conditions met, to prevent unwanted sfx from CoreX. Power Bomb drops are not desired when this script is used.
+        else 
+            exit
     }
 	//The game handles strings differently; they now return as `0`. To keep the funny string, added a condition that is also found in the other spawn pickups script.
     if (sprite_index != sQueenProjFrozen && instance_exists(xParasite) && oControl.mod_fusion == 1 && canbeX == 1)
