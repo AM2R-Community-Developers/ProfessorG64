@@ -55,7 +55,8 @@ if (random(100) <= argument2)
         else if ((global.item[0] == 0 && global.maxpbombs > 0) || oControl.mod_insanitymode == 1)
             pickup = 4
     }
-    if (sprite_index != sQueenProjFrozen && instance_exists(xParasite) && oControl.mod_fusion == 1)
+	//The game handles strings differently; they now return as `0`. To keep the funny string, added a condition that is also found in the other spawn pickups script.
+    if (sprite_index != sQueenProjFrozen && instance_exists(xParasite) && oControl.mod_fusion == 1 && canbeX == 1)
     {
         PlaySoundMono(sndXMorph2)
         xParasite.reform = -1
