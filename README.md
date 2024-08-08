@@ -1,4 +1,8 @@
 # ProfessorG64
+
+# This project is indefinitely postponed.
+64-bit Android support is intended - though not guaranteed - to release alongside AM2R 2.0 instead.
+
 ```diff
 - WARNING: This is NOT intended for players, please use the AM2RLauncher to install the game instead!
 ```
